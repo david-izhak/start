@@ -7,16 +7,16 @@ import (
 
 func main() {
 	var (
-		age  int
-		name string
+		firstname string
+		surname   string
+		age       int
 	)
 
 	//fmt.Scan(&age)
 	//fmt.Scan(&name)
-	fmt.Scan(&age, &name)
+	fmt.Scan(&firstname, &surname, &age)
 
-	fmt.Printf("My name is: %s. My age is: %d\n", name, age)
+	fmt.Fscan(os.Stdin, &age) // Позволяет считывать не только с консоли, но из других источников, например из файла. В данном примере считывает из консоли (os.Stdin)
 
-	fmt.Fscan(os.Stdin, &age)
-	fmt.Printf("New age is: %d\n", age)
+	fmt.Printf("Имя: %s , Фамилия: %s , Возраст: %d . Студент BPS\n", firstname, surname, age)
 }
